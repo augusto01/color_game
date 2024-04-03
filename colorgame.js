@@ -35,14 +35,17 @@ let rgb = document.querySelector('#colorDisplay');
 let display = document.querySelector('#message')
 rgb.textContent = pickedColor;
 
+
 /**Evento clicks de la paletas */
-for (let i = 0; i < paletas.length; i++){
-    paletas[i].addEventListener('click', function(){
-        var clickColor = this.textContent;
-        if (clickColor === pickedColor){
+for (let i = 0; i < paletas.length; i++) {
+    paletas[i].addEventListener('click', function() {
+        var clickColor = paletas[i].style.backgroundColor;
+        if (clickColor === pickedColor) {
             display.textContent = 'YOU WIN';
         } else {
             display.textContent = 'TRY AGAIN';
         }
     });
 }
+
+console.log (paletas[0].textContent)
