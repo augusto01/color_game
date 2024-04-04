@@ -65,3 +65,32 @@
         opacity: 0; /* Hace que el elemento sea transparente */
         visibility: hidden; /* Oculta el elemento pero mantiene su espacio */
     }
+
+/*CONFETI*//* 
+ Define la animación para las serpentinas */
+/* Define la animación para las serpentinas */
+/* Define el estilo base para las serpentinas */
+.confetti {
+  width: 10px;
+  height: 10px;
+  position: fixed;
+  opacity: 0.7;
+  animation: fall 3s ease-in-out infinite;
+  z-index: 9999; /* Ajusta el valor según sea necesario */
+}
+
+/* Define la animación de caída de las serpentinas */
+@keyframes fall {
+  0% {
+      transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+      transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Agrega la clase 'stop-confetti' para detener la animación */
+.stop-confetti {
+  animation: none !important;
+}
+
