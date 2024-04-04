@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var btnPlayAgain = document.querySelector('#reset');
         btnPlayAgain.addEventListener('click', function() {
             backh1.style.backgroundColor = '#232323'
+            display.textContent = '';
             if (btnHard.classList.contains('selected')) {
                 colorsArray = generateRandomColors(6);
             } else {
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btnHard.classList.add('selected');
             btnEasy.classList.remove('selected');
             colorsArray = generateRandomColors(6);
+            display.textContent = '';
             var paletas_hard = document.querySelectorAll('.square');
             for(let i=3; i< paletas_easy.length ; i++){
                 paletas_hard[i].style.display = 'block';
@@ -71,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         //BOTON EASY
         var paletas_easy = document.querySelectorAll('.square');
+        display.textContent = '';
         var btnEasy = document.querySelector('#easy')
         btnEasy.addEventListener('click', function() {
             btnHard.classList.remove('selected');
