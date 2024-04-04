@@ -1,5 +1,29 @@
 var colorsArray = [];
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+    //INICIAR COLORES
+    colorsArray = generateRandomColors(6); // Generar los colores iniciales
+    pickedColor = colorsArray[3]; // Asignamos un color inicial
+    rgb.textContent = pickedColor; // Actualizamos el color mostrado
+    updatePalette(); // Actualizar los colores de la paleta inicialmente
+
+    
+    //BOTON PLAY AGAIN
+    var btnPlayAgain = document.querySelector('#reset');
+    btnPlayAgain.addEventListener('click', function() {
+        backh1.style.backgroundColor = '#232323'
+        colorsArray = generateRandomColors(6); // Generar 6 nuevos colores
+        pickedColor = colorsArray[3]; // Actualizamos pickedColor después de generar los colores
+        rgb.textContent = pickedColor; // Actualizamos el color mostrado
+        updatePalette(); // Actualizar los colores de la paleta
+    });
+
+    
+});
+
 function generateRandomColors(num) {
     var tempArray = [];
     for (var i = 0; i < num; i++) {
@@ -11,23 +35,6 @@ function generateRandomColors(num) {
     }
     return tempArray;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    //PLAY AGAIN
-    var btnPlayAgain = document.querySelector('#reset');
-    btnPlayAgain.addEventListener('click', function() {
-        backh1.style.backgroundColor = '#232323'
-        colorsArray = generateRandomColors(6); // Generar 6 nuevos colores
-        pickedColor = colorsArray[3]; // Actualizamos pickedColor después de generar los colores
-        rgb.textContent = pickedColor; // Actualizamos el color mostrado
-        updatePalette(); // Actualizar los colores de la paleta
-    });
-
-    colorsArray = generateRandomColors(6); // Generar los colores iniciales
-    pickedColor = colorsArray[3]; // Asignamos un color inicial
-    rgb.textContent = pickedColor; // Actualizamos el color mostrado
-    updatePalette(); // Actualizar los colores de la paleta inicialmente
-});
 
 function updatePalette() {
     let paletas = document.querySelectorAll('.square');
@@ -79,8 +86,9 @@ function cambiarColores(color){
 }
 
 
+//LOGICA DEL JUEGO
 
-    for (let i = 0; i < paletas.length; i++) {
+for (let i = 0; i < paletas.length; i++) {
         paletas[i].addEventListener('click', function() {
             var clickColor = paletas[i].style.backgroundColor;
             if (clickColor === pickedColor) {
