@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Posición aleatoria en la pantalla
         confetti.style.left = Math.random() * window.innerWidth + 'px';
-        confetti.style.animationDelay = Math.random() * 4 + 's'; // Retraso aleatorio en la animación
+        confetti.style.animationDelay = Math.random() * 2 + 's'; // Retraso aleatorio en la animación
     }
 }
 
