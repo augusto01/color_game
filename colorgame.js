@@ -62,15 +62,23 @@ document.addEventListener('DOMContentLoaded', function() {
             btnHard.classList.add('selected');
             btnEasy.classList.remove('selected');
             colorsArray = generateRandomColors(6);
+            var paletas_hard = document.querySelectorAll('.square');
+            for(let i=3; i< paletas_easy.length ; i++){
+                paletas_hard[i].style.display = 'block';
+            }
             updatePalette();
         });
 
         //BOTON EASY
+        var paletas_easy = document.querySelectorAll('.square');
         var btnEasy = document.querySelector('#easy')
         btnEasy.addEventListener('click', function() {
             btnHard.classList.remove('selected');
             btnEasy.classList.add('selected');
             colorsArray = generateRandomColors(3); // Generar 3 nuevos colores
+            for(let i=3; i< paletas_easy.length ; i++){
+                paletas_easy[i].style.display = 'none';
+            }
             updatePalette(); // Actualizar los colores de la paleta
         });
 
@@ -79,6 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
             colorsArray = generateRandomColors(6);
         } else {
             colorsArray = generateRandomColors(3);
+            for(let i = 3; i < paletas.length; i++){
+                paletas[i].style.display = 'none';
+            }
         }
         updatePalette();
 
