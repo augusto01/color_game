@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //BOTON PLAY AGAIN
         var btnPlayAgain = document.querySelector('#reset');
         btnPlayAgain.addEventListener('click', function() {
+            enableClicks();
             backh1.style.backgroundColor = '#232323'
             display.textContent = '';
             if (btnHard.classList.contains('selected')) {
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var btnHard = document.querySelector('#hard')
         btnHard.addEventListener('click', function() {
             stopConfetti();
+            enableClicks();
             btnHard.classList.add('selected');
             btnEasy.classList.remove('selected');
             colorsArray = generateRandomColors(6);
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var btnEasy = document.querySelector('#easy')
         btnEasy.addEventListener('click', function() {
             stopConfetti();
+            enableClicks();
             btnHard.classList.remove('selected');
             btnEasy.classList.add('selected');
             colorsArray = generateRandomColors(3); // Generar 3 nuevos colores
