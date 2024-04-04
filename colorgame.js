@@ -98,15 +98,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Lógica del juego
         let paletas = document.querySelectorAll('.square');
+        
         for (let i = 0; i < paletas.length; i++) {
             paletas[i].addEventListener('click', function() {
                 var clickColor = paletas[i].style.backgroundColor;
                 if (clickColor === pickedColor) {
                     cambiarColores(clickColor);
                 } else {
+                    paletas[i].classList.add('hidden');
                     display.textContent = 'TRY AGAIN';
+                    paletas[i].style.visibility = 'hidden'
                 }
-            });
+            });       
         }
     }
 
@@ -117,7 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function cambiarColores(color) {
         let paletas = document.querySelectorAll('.square');
         for (let i = 0; i < paletas.length; i++) {
+            paletas[i].classList.remove('hidden')
+            paletas[i].style.visibility = 'visible'
             paletas[i].style.backgroundColor = color;
+
         }
         backh1.style.backgroundColor = color;
         display.textContent = 'CORRECT';

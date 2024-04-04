@@ -13,6 +13,7 @@
       margin: 1.66%;
       border-radius: 15pt;
       transition-duration: 0.6s;
+      transition:  0.5seg;
   }
   
   .container {
@@ -53,4 +54,14 @@
       width: 15%;
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       color: black; 
+    }
+
+    /*MIS MODIFICACIONES*/
+    .square {
+      transition: opacity 0.5s ease-in-out; /* Transición suave de la opacidad durante 0.5 segundos */
+    }
+  
+    .square.hidden {
+        opacity: 0; /* Hace que el elemento sea transparente */
+        visibility: hidden; /* Oculta el elemento pero mantiene su espacio */
     }
